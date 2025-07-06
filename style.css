@@ -2,28 +2,40 @@
     margin: 0;
     padding: 0;
 }
+
+
 .container{
     display: flex;
-    /* justify-content: space-around; */
-}
-.left{
-    border: 2px solid red;
-    width: 25vw;
-    margin: 3px;
-padding: 21px;
     background: #000;
 }
-.right{
-    border: 2px solid greenyellow;
-    width: 75vw;
-      margin: 3px;
+.left{
+border: 2px solid red;
+width: 25vw;
+margin: 3px;
+padding: 34px;
+background: #121212;
+color: white;
 }
+
+.home{
+    background: #121212;
+}
+.library{
+    background: #121212;
+}
+
+.right{
+border: 2px solid red;
+width: 75vw;
+margin: 3px;
+}
+
 .home ul li{
-    width: 15px;
-    gap: 15px;
+    width: 14px;
     display: flex;
+    gap: 15px;
 }
 
 .invert{
-    filter: invert(1);
+filter: invert(1);
 }
