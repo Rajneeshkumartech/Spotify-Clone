@@ -9,23 +9,29 @@
     background: #000;
 }
 .left{
-border: 2px solid red;
 width: 25vw;
 margin: 3px;
-padding: 34px;
-background: #121212;
+padding: 10px;
+/* background: #121212; */
 color: white;
 }
 
 .home{
     background: #121212;
+    border: 2px solid red;
+    border-radius: 7px;
+    margin: 5px;
+    padding: 10px;
 }
 .library{
     background: #121212;
+    border: 2px solid red;
+    border-radius: 7px;
+     margin: 5px;
+      padding: 10px;
 }
 
 .right{
-border: 2px solid red;
 width: 75vw;
 margin: 3px;
 }
@@ -34,8 +40,25 @@ margin: 3px;
     width: 14px;
     display: flex;
     gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
 }
 
 .invert{
 filter: invert(1);
+}
+
+.heading{
+      width: 100%;
+    display: flex;
+    gap: 15px;
+  padding-top: 14px;
+  padding: 23px 14px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+}  
+
+.heading img{
+    width: 30px;
 }
