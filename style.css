@@ -1,39 +1,38 @@
 *{
-    margin: 0;
-    padding: 0;
+     margin:0;
+    padding:0;
 }
 
-
+body{
+    background: #000;
+    color: white;
+}
 .container{
     display: flex;
     background: #000;
 }
+
+
 .left{
 width: 25vw;
 margin: 3px;
 padding: 10px;
-/* background: #121212; */
 color: white;
 }
 
 .home{
     background: #121212;
-    border: 2px solid red;
     border-radius: 7px;
     margin: 5px;
     padding: 10px;
 }
 .library{
     background: #121212;
-    border: 2px solid red;
     border-radius: 7px;
      margin: 5px;
       padding: 10px;
-}
-
-.right{
-width: 75vw;
-margin: 3px;
+      min-height: 69vh;
+      position: relative;
 }
 
 .home ul li{
@@ -61,4 +60,153 @@ filter: invert(1);
 
 .heading img{
     width: 30px;
+}
+
+.footer{
+    display: flex;
+flex-wrap: wrap;
+    font-size: 10px;
+    gap: 13px;
+    position: absolute;
+    bottom: 10px;
+   
+   
+}
+.footer a{
+color: grey;
+/* white-space: nowrap; */
+display: block;
+}
+
+
+.right{
+    background: #121212;
+    color: white;
+    border-radius: 7px;
+    margin:16px 0;
+    width: 75vw;
+
+}
+
+
+::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+    width: 0;      /* Ensures no width is taken by the scrollbar */
+    height: 0;     /* Ensures no height is taken by the scrollbar */
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem;
+    padding: 5px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 5px;
+}
+
+.buttons{
+    display: flex;
+  gap: 10px;
+align-items: center;
+}
+.buttons button{
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 12px;
+    height: 1.6rem;
+}
+
+.Sign_up{
+    border: none;
+    outline: none;
+    background-color:rgb(34, 34, 34);
+    color: black;
+}
+
+.Sign_up:hover{
+ color: white;
+  font-size: 17px;
+   transition: all 1s ease-out;
+}
+
+.Log_in{
+    background: white;
+    border-radius: 21px;
+    color: #000;
+    width: 79px;
+    font-size: 16px;
+}
+
+.Log_in:hover{
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 1s ease-out;
+}
+
+
+.header img{
+    width: 24px;
+}
+
+.spotify_playlist h1{
+padding: 1rem;
+margin: 1rem;
+}
+
+.card_container{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+     max-height: 60vh;
+   overflow: scroll;
+}
+
+.cards > *{
+    padding-top: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+}
+
+.cards{
+     background-color: #252525;
+    padding: 0.6rem;
+     margin-bottom: 1rem;  
+   border-radius: 10px;
+    width: 200px;
+    position: relative;
+}
+.cards img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.play_button{
+    height: 28px;
+width: 28px;
+background-color: #1fdf64;
+border-radius: 50%;
+padding: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 168px;
+right: 17px;
+opacity: 0;
+transition: all 1s ease-out;
+}
+
+
+.play_button img{
+width: 14px;
+position: absolute;
+right: 10px;
+}
+
+.cards:hover{
+    .play_button{
+        opacity: 100%;
+    }
 }
