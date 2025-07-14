@@ -12,17 +12,37 @@ let songs = []
 for(let i = 0;i<as.length;i++){
     const element = as[i];
     if(element.href.endsWith(".mp3")){
-        songs.push(element.href)
+        songs.push(element.href.split("/songs/")[1])
     }
 }
 return songs
 }
-
-async function main(){
+async function main(){ 
     let songs = await getsongs()
     console.log(songs);
+    let songs_UL = document.querySelector(".song_list").getElementsByTagName("ul")[0];
+   for (const song of songs) {
+    songs_UL.innerHTML=songs_UL.innerHTML+ `<li><img class = 'music' src="./svg/music.svg" alt="music">
+                    <div class="info">
+                        <div>${song.replaceAll('%20'," ")}</div>
+                        <div>R K </div>
+                    </div>
+                   <div class="play_now">
+                    <span>Play Now</span>
+                     <img class="invert" src="./svg/play.svg" alt="">
+                   </div>
+                </li>`
+    // console.log(`${song.replaceAll('%20'," ")}`)
+   }
     //play the first song
-    var audio = new Audio(songs[1]);
-    audio.play();
+    // const random = Math.floor(Math.random()*7+1)
+    var audio = new Audio(songs[0]);  
+    audio.play(); 
+
+    // audio.addEventListener('loadeddata',()=>{
+    //     let duration = audio.duration;
+    //     console.log(duration);  
+    // })
 }
-main()  
+main();
+    //  
