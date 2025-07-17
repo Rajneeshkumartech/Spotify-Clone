@@ -17,7 +17,15 @@ for(let i = 0;i<as.length;i++){
 }
 return songs
 }
+
+ 
+function playmusic(track){
+    let audio = new Audio ("/songs/"+track)
+    audio.play()
+}
 async function main(){ 
+
+    let currentsong;
     let songs = await getsongs()
     console.log(songs);
     let songs_UL = document.querySelector(".song_list").getElementsByTagName("ul")[0];
@@ -32,17 +40,18 @@ async function main(){
                      <img class="invert" src="./svg/play.svg" alt="">
                    </div>
                 </li>`
-    // console.log(`${song.replaceAll('%20'," ")}`)
-   }
-    //play the first song
-    // const random = Math.floor(Math.random()*7+1)
-    var audio = new Audio(songs[0]);  
-    audio.play(); 
 
-    // audio.addEventListener('loadeddata',()=>{
-    //     let duration = audio.duration;
-    //     console.log(duration);  
-    // })
+  
+
+}
+// atach an event listener to each song 
+Array.from(document.querySelector(".song_list").getElementsByTagName("li")).forEach(e => {
+    e.addEventListener("click",(element)=>{
+       console.log(e.querySelector(".info").firstElementChild.innerHTML)
+    playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+    })
+ 
+});  
 }
 main();
     //  
