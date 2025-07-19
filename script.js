@@ -1,13 +1,13 @@
+// let play = document.querySelector("#play")
+let song_name = document.querySelector(".song_name")
+let currentsong = new Audio()
 
 async function getsongs(){
 let a = await fetch("http://127.0.0.1:5500/songs/");
-// console.log(a)
 let response = await a.text();
-// console.log(response)
 let div = document.createElement("div")
 div.innerHTML = response;
 let as = div.getElementsByTagName("a");
-// console.log(as)
 let songs = []
 for(let i = 0;i<as.length;i++){
     const element = as[i];
@@ -20,14 +20,16 @@ return songs
 
  
 function playmusic(track){
-    let audio = new Audio ("/songs/"+track)
-    audio.play()
+    currentsong.src = "/songs/"+track
+    // let audio = new Audio ("/songs/"+track)
+    currentsong.play();
+    play.src = "svg/pause.svg"
 }
 async function main(){ 
 
-    let currentsong;
+   
     let songs = await getsongs()
-    console.log(songs);
+    // console.log(songs);
     let songs_UL = document.querySelector(".song_list").getElementsByTagName("ul")[0];
    for (const song of songs) {
     songs_UL.innerHTML=songs_UL.innerHTML+ `<li><img class = 'music' src="./svg/music.svg" alt="music">
@@ -46,12 +48,23 @@ async function main(){
 }
 // atach an event listener to each song 
 Array.from(document.querySelector(".song_list").getElementsByTagName("li")).forEach(e => {
-    e.addEventListener("click",(element)=>{
-       console.log(e.querySelector(".info").firstElementChild.innerHTML)
-    playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+    e.addEventListener("click",()=>{
+    //    console.log(e.querySelector(".info").firstElementChild.innerHTML)
+    playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+song_name.innerText = e.querySelector(".info").firstElementChild.innerHTML.trim()
     })
  
 });  
+
+play.addEventListener('click',()=>{
+    if(currentsong.paused){
+currentsong.play();
+play.src = "svg/pause.svg"
+    }
+    else{
+currentsong.pause();
+play.src = "svg/play.svg"
+    }
+})
 }
 main();
-    //  
