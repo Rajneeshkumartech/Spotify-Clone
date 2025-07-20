@@ -36,6 +36,15 @@ color: white;
     padding: 10px;
 }
 
+.close-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.close{
+    display: none;
+}
+
 .library{
     background: #121212;
     border-radius: 7px;
@@ -339,6 +348,7 @@ position: static;
     bottom: 67px;
     left: 1%;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .circle{
@@ -349,7 +359,7 @@ position: static;
     position: relative;
     bottom: 6px;
     left: 0%;
-    transition: left 1s linear;
+    transition: left 0.5s linear;
     cursor: pointer;
 
 }
@@ -370,4 +380,24 @@ position: static;
 cursor: pointer;
 }
 
+.hamburger{
+    display: none;
+}
 
+@media (max-width: 1400px) { 
+    .left{
+        position: absolute;
+        left: -100%;
+transition: all 0.5s;
+        z-index: 1;
+
+    }
+
+    .hamburger{
+    display: inline-block;
+}
+.close{
+    display: inline-block;
+}
+
+}
