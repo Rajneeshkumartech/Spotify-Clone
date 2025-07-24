@@ -248,8 +248,8 @@ border-radius: 10px;
 }
 
 .spotify_playlist h1{
-padding: 1rem;
-margin: 1rem;
+padding: 0.2rem;
+margin: 0.2rem 0.8rem;
 }
 
 .card_container{
@@ -368,7 +368,11 @@ position: static;
 .song_info {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.song_name{
+    width: 30%;
 }
 .songsbutton{
  display: flex;
@@ -380,12 +384,29 @@ position: static;
 cursor: pointer;
 }
 
+.songtime-volume{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
 .hamburger{
     display: none;
 }
 
-@media (max-width: 1400px) { 
+.volume{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) { 
     .left{
+        background: #000;
+        width: 300px;
+        height: calc(100vh - 9rem);
         position: absolute;
         left: -100%;
 transition: all 0.5s;
@@ -395,9 +416,42 @@ transition: all 0.5s;
 
     .hamburger{
     display: inline-block;
+    cursor: pointer;
 }
 .close{
     display: inline-block;
+    cursor: pointer;
 }
 
+.songtime-volume{
+    flex-direction: column;
+    gap: 0.6rem;
 }
+
+
+.playbar {
+        height: auto; /* Ensure playbar adjusts */
+        flex-direction: column; /* Force column layout for playbar on smaller screens */
+    }
+
+    .seekbar{
+      bottom: 117px;  
+    }
+
+    .song_info, .songtime-volume {
+        flex-direction: column; /* Force column layout */
+        align-items: center;
+        width: 100%;
+        gap: 4px;
+       
+    }
+
+    .song_name, .volume {
+        width: 100%;
+        text-align: center;
+         justify-content: end;
+    }
+
+}
+
+
